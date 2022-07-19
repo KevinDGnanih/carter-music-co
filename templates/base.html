@@ -17,12 +17,15 @@
     {% block corecss %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
+    <script src="https://kit.fontawesome.com/bb09779c85.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -46,7 +49,7 @@
         <!-- Top Nav -->
         <div class="top-nav">
             <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
-                <a class="navbar-brand main-logo-link" href="#">Carter Music & co.</a>
+                <a class="navbar-brand main-logo-link" href="{% url 'home' %}">Carter Music & co.</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
                     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -60,36 +63,42 @@
                     </form>
                 </div>
 
-                <div class="collapse navbar-collapse col-lg-4 my-auto py-1 py-lg-0" id="navbarColor01">
+                <div class="collapse  navbar-collapse col-lg-4 my-auto py-1 py-lg-0" id="navbarColor01">
                     <ul class="navbar-nav list-inline list-unstyled text-center text-lg-right my-0">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Product Management</a>
+                        <li class="list-inline-item dropdown">
+                            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p class="my-0">My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
                         </li>
-                        {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
-                        </li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
                                 href="#">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    £0.00
-                                    {% endif %}
-                                </p>
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                    <p class="my-0">
+                                        {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        £0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
                             </a>
                         </li>
                     </ul>
