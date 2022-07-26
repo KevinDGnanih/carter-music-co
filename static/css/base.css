@@ -48,6 +48,10 @@ html {
     border: 1px solid black !important;
 }
 
+.list-item {
+    display: list-item;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
