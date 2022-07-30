@@ -3,8 +3,13 @@ html {
 }
 
 body {
+    background: url('https://res.cloudinary.com/kdcloud-8710/image/upload/v1659208312/carter%20music%20and%20co/NASS20_Website_Header_Stages-venues_2840x1900-Desktop-2840x1536_oin1l8.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
+}
+
+.background-texts {
+    background-color: rgb(29, 29, 29, 0.5)
 }
 
 /* from Bulma */
