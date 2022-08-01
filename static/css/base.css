@@ -103,3 +103,22 @@ body {
         padding-top: 164px;
     }
 }
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 177px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    /*.bottom-nav {
+        height: 0px;
+    }*/
+
+    .bottom-navbar {
+        padding: 0px;
+    }
+}
