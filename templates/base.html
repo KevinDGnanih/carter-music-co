@@ -109,17 +109,44 @@
         <!-- Bottom Nav -->
         <div class="bottom-nav my-lg-0">
             <nav class="navbar bottom-navbar navbar-expand-lg navbar-light bg-light mx-auto list-inlinem">
-                <div class="navbar-nav collapse navbar-collapse navbar-expand-lg mx-auto list-inline-item justify-content-center"
-                    text-center id="navbarColor01">
-                    <a class="nav-item nav-link" href="#">Electric <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Acoustic</a>
-                    <a class="nav-item nav-link" href="#">Bass</a>
-                    <a class="nav-item nav-link" href="#">Amps</a>
-                    <a class="nav-item nav-link" href="#">Keyboards</a>
-                    <a class="nav-item nav-link" href="#">Recordings</a>
-                    <a class="nav-item nav-link" href="#">Effects</a>
-                    <a class="nav-item nav-link" href="#">Drums</a>
+                <div class="navbar-nav collapse navbar-collapse navbar-expand-lg mx-auto list-inline-item justify-content-center
+                    text-center" id="navbarColor01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=electric">Electric <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=acoustic">Acoustic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=bass">Bass</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=amps">Amps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=keys">Keyboards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-item nav-link" href="{% url 'products' %}?category=drums">Drums</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                href="#">Sort By</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}?sort=brand&direction=asc">By Brand</a></li>
+                                <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
+
             </nav>
         </div>
         <div id="delivery-banner" class="row text-center">
