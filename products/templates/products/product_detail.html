@@ -46,6 +46,34 @@
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
+                        {% with product.variants.all as c %}
+                        {% if c %}
+                        <div class="col-12">
+                            <p><strong>Color:</strong></p>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <figure class="'image">
+                                                {% for variant in product.variants.all %}
+                                                {% if product.image %}
+                                                <a href="{% url 'product_detail' variant.id %}">
+                                                    <img class="img-thumbnail" src="{{ variant.image.url }}"
+                                                        alt="{{ product.image }}">
+                                                </a>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </figure>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <select class="form-control w-50" name="product_color" id="id_product_color">
+                                <option value="product.id.color" selected>Tobacco Burst</option>
+                                <option value="cherry_sunburst">Cherry Sunburst</option>
+                            </select>
+                        </div>
+                        {% endif %}
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
@@ -56,7 +84,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col{% if c %}-12 mt-2{% endif %}">
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
@@ -66,6 +94,7 @@
                             <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        {% endwith %}
                     </div>
                 </form>
             </div>
