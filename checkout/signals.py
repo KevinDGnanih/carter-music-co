@@ -13,7 +13,7 @@ def update_on_save(sender, intance, created, **kwargs):
 
 
 @receiver(post_delete, sender=OrderLineItem)
-def update_on_save(sender, intance, **kwargs):
+def update_on_delete(sender, intance, **kwargs):
     """
     Update order total on lineitem delete
     """
