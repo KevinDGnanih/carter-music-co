@@ -1,1 +1,1 @@
-web: gunicorn carter_music_co.wsgi
+web: gunicorn carter_music_co.wsgi:application
