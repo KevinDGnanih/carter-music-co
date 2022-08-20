@@ -1,3 +1,4 @@
+""" Webhook Handler """
 from django.http import HttpResponse
 
 from products.models import Product
