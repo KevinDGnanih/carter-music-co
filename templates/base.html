@@ -19,7 +19,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -162,21 +162,21 @@
     </header>
 
     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -191,4 +191,5 @@
     </script>
     {% endblock %}
 </body>
+
 </html>
