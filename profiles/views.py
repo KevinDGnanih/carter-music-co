@@ -1,3 +1,4 @@
+""" Profiles views """
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 
@@ -30,6 +31,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ Order history """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
