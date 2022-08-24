@@ -30,9 +30,9 @@ body {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
     color: #007bff;
     background-color: white;
 }
@@ -70,8 +70,8 @@ body {
     text-transform: uppercase;
 }
 
-.btn-black {
-    background: black;
+.btn-blue {
+    background: #007bff;
     color: white;
 }
 
@@ -390,12 +390,12 @@ a.category-badge>span.badge:hover {
     }
 
     .btn.btn-outline-black.rounded-0,
-    .btn.btn-black.rounded-0 {
+    .btn.btn-blue.rounded-0 {
         padding: .375rem .375rem;
     }
 
     .btn.btn-outline-black.rounded-0.btn-lg,
-    .btn.btn-black.rounded-0.btn-lg {
+    .btn.btn-blue.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
     }
