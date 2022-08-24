@@ -27,7 +27,9 @@ body {
 }
 
 .main-logo-link {
+    text-transform: uppercase;
     width: fit-content;
+    letter-spacing: 4px;
 }
 
 .shop-now-button {
