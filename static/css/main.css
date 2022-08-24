@@ -42,8 +42,10 @@ body {
 }
 
 .bottom-link:hover {
-    text-decoration: underline, #007bff;
+    text-decoration: underline;
+    text-decoration-color: #007bff;
     font-weight: bold;
+
 }
 
 /* from Bulma */
