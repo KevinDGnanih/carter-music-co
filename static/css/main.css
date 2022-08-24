@@ -33,8 +33,10 @@ body {
 }
 
 .shop-now-button {
-    background: black;
     color: white;
+    border-color: #007bff;
+    text-transform: uppercase;
+    background-color: #007bff;
     min-width: 260px;
 }
 
@@ -63,8 +65,8 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    color: #007bff;
+    background-color: white;
 }
 
 .text-black {
@@ -121,8 +123,6 @@ a.category-badge>span.badge:hover {
     color: #007bff;
     background-color: white;
 }
-
-
 
 .btn-link,
 .update-link,
