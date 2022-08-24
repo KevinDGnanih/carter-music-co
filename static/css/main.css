@@ -76,6 +76,17 @@ body {
     color: white;
 }
 
+.btn-green {
+    color: white;
+    background: #22d14b;
+}
+
+.btn-green:hover {
+    color: #22d14b;
+    background: white;
+    border-color: #22d14b;
+}
+
 .btn-outline-blue {
     background: #007bff;
     color: white !important;
