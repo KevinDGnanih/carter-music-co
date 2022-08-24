@@ -19,6 +19,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     {% endblock %}
 
     {% block extra_css %}
@@ -59,9 +64,9 @@
 
             <div class="collapse navbar-collapse search-bar col-12 col-lg-4 my-auto py-1 py-lg-0" id="navbarColor01">
                 <form method="GET" action="{% url 'products' %}" class="form-inline input-group">
-                    <input class="form-control border mr-sm-2" type="text" name="q" placeholder="Search here..."
+                    <input class="form-control border rounded mr-sm-2" type="text" name="q" placeholder="Search here..."
                         aria-label="Search">
-                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-style my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
 

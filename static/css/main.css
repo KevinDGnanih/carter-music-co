@@ -110,6 +110,11 @@ a.category-badge>span.badge:hover {
     right: 10px;
 }
 
+.btn-style {
+    color: #007bff;
+    border-color: #007bff;
+}
+
 .btn-link,
 .update-link,
 .remove-item {
