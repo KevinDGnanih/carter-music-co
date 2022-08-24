@@ -34,6 +34,7 @@ body {
 .btn-blue:active,
 .btn-blue:focus {
     color: #007bff;
+    border-color: #007bff;
     background-color: white;
 }
 
@@ -75,18 +76,19 @@ body {
     color: white;
 }
 
-.btn-outline-black {
-    background: white;
-    color: black !important;
+.btn-outline-blue {
+    background: #007bff;
+    color: white !important;
     /* use important to override link colors for <a> elements */
-    border: 1px solid black;
+    border: 1px solid #007bff;
 }
 
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
-    color: white !important;
+.btn-outline-blue:hover,
+.btn-outline-blue:active,
+.btn-outline-blue:focus {
+    background: white;
+    border-color: #007bff;
+    color: #007bff !important;
 }
 
 
@@ -389,12 +391,12 @@ a.category-badge>span.badge:hover {
         font-size: .9rem;
     }
 
-    .btn.btn-outline-black.rounded-0,
+    .btn.btn-outline-blue.rounded-0,
     .btn.btn-blue.rounded-0 {
         padding: .375rem .375rem;
     }
 
-    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-outline-blue.rounded-0.btn-lg,
     .btn.btn-blue.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
