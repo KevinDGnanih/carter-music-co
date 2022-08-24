@@ -48,6 +48,10 @@ body {
 
 }
 
+.icon-nav {
+    color: white;
+}
+
 .icon-nav:hover,
 .fa-user:hover,
 .fa-shopping-bag:hover {
