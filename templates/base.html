@@ -53,7 +53,7 @@
 
     <header class="fixed-top">
         <!-- Top Nav -->
-        <div id="topnav" class="navbar  navbar-expand-lg navbar-dark">
+        <div id="topnav" class="navbar navbar-expand-lg navbar-dark bg-black">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a class="navbar-brand main-logo-link" href="{% url 'home' %}">Carter Music & co.</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -73,7 +73,7 @@
             <div class=" col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="navbar-nav list-inline list-unstyled text-center text-lg-right my-0 list-item">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link icon-nav" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-white nav-link icon-nav rounded" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -83,18 +83,18 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                            <a href="{% url 'add_product' %}" class="dropdown-item bottom-link">Product Management</a>
                             {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <a href="{% url 'profile' %}" class="dropdown-item bottom-link">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item bottom-link">Logout</a>
                             {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <a href="{% url 'account_signup' %}" class="dropdown-item bottom-link">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item bottom-link">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="icon-nav {% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
+                        <a class="icon-nav rounded {% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
