@@ -19,8 +19,6 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     {% endblock %}
 
     {% block extra_css %}
@@ -44,6 +42,8 @@
     {% endblock %}
 
     <title>Carter Music & co. {% block extra_title %}{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
@@ -70,8 +70,8 @@
             <div class=" col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="navbar-nav list-inline list-unstyled text-center text-lg-right my-0 list-item">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link icon-nav rounded" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="text-white nav-link icon-nav rounded" href="#" id="user-options"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
@@ -132,21 +132,27 @@
                             <a class="nav-link bottom-link" href="{% url 'products' %}?category=keys">Keyboards</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-item nav-link bottom-link" href="{% url 'products' %}?category=drums">Drums</a>
+                            <a class="nav-item nav-link bottom-link"
+                                href="{% url 'products' %}?category=drums">Drums</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle bottom-link" role="button" data-toggle="dropdown"
                                 data-bs-toggle="dropdown" aria-expanded="false" href="#">All Products</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item bottom-link" href="{% url 'products' %}?sort=price&direction=asc">By
+                                <li><a class="dropdown-item bottom-link"
+                                        href="{% url 'products' %}?sort=price&direction=asc">By
                                         Price</a></li>
-                                <li><a class="dropdown-item bottom-link" href="{% url 'products' %}?sort=rating&direction=desc">By
+                                <li><a class="dropdown-item bottom-link"
+                                        href="{% url 'products' %}?sort=rating&direction=desc">By
                                         Rating</a></li>
-                                <li><a class="dropdown-item bottom-link" href="{% url 'products' %}?sort=category&direction=asc">By
+                                <li><a class="dropdown-item bottom-link"
+                                        href="{% url 'products' %}?sort=category&direction=asc">By
                                         Category</a></li>
-                                <li><a class="dropdown-item bottom-link" href="{% url 'products' %}?sort=brand&direction=asc">By
+                                <li><a class="dropdown-item bottom-link"
+                                        href="{% url 'products' %}?sort=brand&direction=asc">By
                                         Brand</a></li>
-                                <li><a class="dropdown-item bottom-link" href="{% url 'products' %}">All products</a></li>
+                                <li><a class="dropdown-item bottom-link" href="{% url 'products' %}">All products</a>
+                                </li>
 
                             </ul>
                         </li>
