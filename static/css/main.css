@@ -160,6 +160,11 @@ body {
 
 .card-img-top {
     width: 50%;
+    transition: all 0.3s ease-out 0s
+}
+
+.card-img-top:hover {
+    transform: scale(1.01);
 }
 
 a.category-badge>span.badge:hover {
