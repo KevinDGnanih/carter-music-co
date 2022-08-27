@@ -126,6 +126,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<script type="text/javascript" src="{% static 'bag/js/bag.js' %}"></script>
 {% include 'products/includes/quantity_input_script.html' %}
-<script type="text/javascript" src="/bag/static/js/bag.js"></script>
 {% endblock %}
