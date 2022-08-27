@@ -273,6 +273,12 @@ a.category-badge>span.badge:hover {
     overflow-y: auto;
 }
 
+/* -------------------------------- Footer */
+
+footer {
+    background-color: #000;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
