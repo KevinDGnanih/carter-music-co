@@ -4,8 +4,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from profiles.models import UserProfile
 from .models import Product, Category, Brand
-from .forms import ProductForm
+from .forms import ProductForm, TestimonyForm
 
 # Create your views here.
 
@@ -76,9 +77,22 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    testimony = product.testimony.filter(approved=True).order_by('created_on')
+
+    testimony_form = TestimonyForm(data=request.POST)
+
+    if testimony_form.is_valid():
+        testimony = testimony_form.save(commit=False)
+        testimony.product = product
+        testimony.save()
+    else:
+        testimony_form = TestimonyForm()
 
     context = {
         'product': product,
+        'testimonies': testimony,
+        'reviewed': False,
+        'testimony_form': TestimonyForm()
     }
 
     return render(request, 'products/product_detail.html', context)

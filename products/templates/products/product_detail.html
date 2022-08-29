@@ -123,6 +123,53 @@
         </div>
     </div>
 </div>
+<!-- Testimony Section Start -->
+
+<div class="pb-80">
+    <div class="p-0">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="small-title mb-30 text-center">
+                    <h2>TESTIMONY</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-6 flex ml-3">
+                {% for testimony in testimonies %}
+                <div class="testimonies">
+                    <span class="test-muted time-testimony">
+                        {{ testimony.created_on }}
+                    </span>
+                    {{ testimony.body | linebreaks }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-12 card">
+            <div class="card-body testimony-box">
+
+                {% if reviewed %}
+                <div class="alert alert-success" role="alert">
+                    Your testimony is awaiting approval
+                </div>
+                {% else %}
+
+                {% if user.is_authenticated %}
+
+                <h3 class="text-center">Drop your testimony:</h3>
+                <form class="col-12" method="POST">
+                    {{ testimony_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn-green">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimony Section End -->
 
 {% include 'includes/footer/footer.html' %}
 

@@ -49,3 +49,24 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Testimony(models.Model):
+    """ Testitmony model """
+    item = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name='testimony')
+    review_score = models.DecimalField(
+        max_digits=6, decimal_places=2, null=True, blank=True)
+    name = models.CharField(max_length=80)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        """ Adding helpers for a better readability and user experience """
+        ordering = ['created_on']
+        verbose_name_plural = 'Testimonies'
+
+    def __str__(self):
+        """ Display the testimony """
+        return f"Testimony {self.body}"
