@@ -139,7 +139,10 @@
 
                 {% for testimony in testimonies %}
                 <div class="testimonies">
-                    <span class="test-muted time-testimony">
+                    <span class="text-muted font-weight-bold">
+                        {{ testimony.review_score }} Rating 
+                    </span>
+                    <span class="text-muted time-testimony">
                         {{ testimony.created_on }}
                     </span>
                     {{ testimony.body | linebreaks }}
@@ -159,7 +162,7 @@
                 {% if user.is_authenticated %}
 
                 <h3 class="text-center">Drop your testimony:</h3>
-                <form class="col-12" method="POST">
+                <form class="col-12" method="post">
                     {{ testimony_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn-green">Submit</button>

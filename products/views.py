@@ -79,6 +79,20 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     testimony = product.testimony.filter(approved=True).order_by('created_on')
 
+    context = {
+        'product': product,
+        'testimonies': testimony,
+        'reviewed': False,
+        'testimony_form': TestimonyForm()
+    }
+
+    return render(request, 'products/product_detail.html', context)
+
+def post(request, product_id):
+
+    product = get_object_or_404(Product, pk=product_id)
+    testimony = product.testimony.filter(approved=True).order_by('created_on')
+
     testimony_form = TestimonyForm(data=request.POST)
 
     if testimony_form.is_valid():
@@ -91,7 +105,7 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'testimonies': testimony,
-        'reviewed': False,
+        'reviewed': True,
         'testimony_form': TestimonyForm()
     }
 
