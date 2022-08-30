@@ -6,9 +6,7 @@ Link to [Deployed Site](https://carter-music-co.herokuapp.com//)
 So that the customers can enjoy their favourite instruments without breaking their bank account.
 The shop allows customer to leave a comment to any instrument.
 
-<div align="center"><img src = "#" width=900></div>
-
-This image is created with [ami.responsivedesign](http://ami.responsivedesign.is/).
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857820/main_g6b3q8.jpg" width=900></div>
 
 ## Table of Contents
 
