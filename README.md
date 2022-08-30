@@ -227,6 +227,9 @@ Base template for allauth has `Back to Home` button at the end of the page, for 
 ## Features Left to Implement
 There are some of features left to implement in the future which I could not add to the project this time due to time constraints. These features are great to be added for a more complete online shop service which would lead to higher customer satisfaction.
 
+## Issues known
+Remove button in the bag doesn't work properly.
+
 ### 1. Limit the user who can leave product review
 At the moment, all the authenticated users can leave reviews to any products if they are logged in. It should be limited to those who actually purchased the product for the validity of the reviews.
 
