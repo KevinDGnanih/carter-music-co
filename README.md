@@ -121,7 +121,6 @@ This image is created with [ami.responsivedesign](http://ami.responsivedesign.is
 ## Design
 ### Wireframes
 Wireframes were created by hands.
-You can find the wireframes [here](#).
 
 ### Brand Identity
 - Vision: Simple design to shocase the intruments with ease.
@@ -130,7 +129,7 @@ You can find the wireframes [here](#).
 
 ### Brand Logo
 Logo design is the cornerstone in your brand identity and presents a company's name, product and brand. I used [Affinity Photo](https://affinity.serif.com/en-gb/photo/?trial&mc=AFFPPC01&gclid=CjwKCAjwx7GYBhB7EiwA0d8oe-kgVX1F7VU0CM0nqeyFV_FV5Ubl5KroxO8iUyloQOa2VovEBqekGBoCNYgQAvD_BwE) to create the brand logo file. The font represents the brand value `Arial`.
-<p align="center"><img src = ""></p>
+<p align="center"><img src = "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.30808-6/302497985_111281378374840_6306577639495841571_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=IGuruednIcEAX-id3Xz&_nc_ht=scontent.ffab1-1.fna&oh=00_AT-ybnzpP3tSLLDVg4XUlsmwL-98ORYxbs5kWAa0qDjKaA&oe=6312CE69"></p>
 
 <div "text-align: right;"><a href="#table-of-contents">Back to top</a></div>
 
@@ -149,35 +148,34 @@ Navbar is fixed at the top of pages across the site, so that the site visitors e
 - Bag icon: The number next to the Bag icon shows the total of items added to the bag.
 
 Navbar for larger screensizes (width > 992px)
-<div align="center"><img src = "#" width=900></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661856869/navbar_full_jhrrqx.jpg" width=900></div>
 
 Navbar for smaller screensizes (width < 992px)
-<div align="center"><img src = "#" width=900></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661856869/navbar_full_jhrrqx.jpg" width=900></div>
 
 ### Footer
 The footer section consists of two sections: 1. General information of the Shop and Quick Link, 2. newsletter subscription form.
 1. General Info and Quick Links: The first footer section includes the shop address and its quick links to the pages within the site.
-<div align="center"><img src = "#" width=700></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857005/otp_qkrvue.jpg" width=700></div>
 
 2. Social media icons: In this milestone project, Social Media icon is linked to my bussiness page on social media, for social media marketing purposes.
-<div align="center"><img src = "#" width=700></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857040/boto_cbcynp.jpg" width=700></div>
 
 <div><a href="#table-of-contents">Back to top</a></div>
-
 ## Product Page
 ### Any categories
 By clicking 'Electric, or Bass etc' on the site menu, you can go to the product page. This page is filtered with 'all categories' category as a default as the shop owner wants to promote products that suits anyone. However, the site visitor can adjust the filter condition very easily.  
 There is a category selection bar, and you can filter products with `electric`, `drums`, etc`.
-<div align="center"><img src = "#" width=250></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857113/bell_bwapob.jpg" width=250></div>
 
 - Result Number: It's shown above the product cards. Customers can see how many results were found in total at a glance.
-<div align="center"><img src = "#" width=350></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857155/rs_vrgesg.jpg" width=350></div>
 
 - Product Card: The products are displayed in cards that have `Product Name`, `Price`, `Category`, `Brand name` and `Rating`. 
 If the user is logged in as a superuser, Edit / Delete option is also shown on each card.
 
 Product Card
-<div align="center"><img src = "#" width=500></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857198/car_cos0w3.jpg" width=500></div>
 
 - Pagination Bar: At the bottom of this online shop page, I've set a pagination bar for easy navigation when there are many results to show. Setting up a pagination bar and limiting the number of the products reduce the loading time and make the site look more organized, which is crucial for a site like which offers many products for sale.
 
@@ -185,13 +183,13 @@ Product Card
 - Product Information: On the right side of the product detail page, there is a `Product Name`, `Price`, `Category`, `Rate`, `Description`, `Quantity`, `Color` option, `Add to bag` button. `Color` option is only visible when the product has the options. Also for superuser, Edit / Delete option will be shown.
 - Product Testimony Section: Customers can see the product scores and review messages by other customers.
 
-<div align="center"><img src = "" width=700></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857284/prodet_rqrudm.jpg" width=700></div>
 
 ## Bag Page
 - The left side of this bag page shows the products added to the bag. Customers are able to change the quantity or remove the products in this bag page.
 - On the right side of this bag page, there is an Order Summary section that shows `Bag Total`, `Delivery` and `Grand Total`. This way, customers are able to check the order summary at first glance even if they have added a lot of products to the shopping bag.
 
-<div align="center"><img src = "#" width=700></div>
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857327/bag_mhlqm2.jpg" width=700></div>
 
 ## Checkout Page
 ### Checkout Page
@@ -264,11 +262,6 @@ If 404 error occured within the site, a page that has the message of the error. 
 **PostgreSQL** was used on deployment stage, which is provided as add-on by Heroku application.
 
 - User model is provided as a default by [Django's authentication system](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/).
-
-## Data Modeling
-Following is Entity Relationship Diagram of this project. I created this diagram with [dbdiagram.io](https://dbdiagram.io/home).
-When I designed this ERD, I referred to [this article](https://launchschool.com/books/sql/read/table_relationships). 
-<p align="center"><img src = "#" width=900></p>
 
 ### Product App
 A instrument could have several types of colors. And have target `category` and `brand`
