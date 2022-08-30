@@ -140,12 +140,16 @@
 
                 {% for testimony in testimonies %}
                 <div class="testimonies">
-                    <span class="text-muted font-weight-bold">
-                        {{ testimony.review_score }} Rating 
+                    <span class="stars-outer">
+                        <span class="stars-inner" style="width: {{ testimony.review_score }}">
+                            {{ testimony.review_score }}%
+                        </span>
                     </span>
-                    <span class="text-muted time-testimony">
-                        {{ testimony.created_on }}
-                    </span>
+                    <div>
+                        <span class="text-muted time-testimony">
+                            {{ testimony.created_on }}
+                        </span>
+                    </div>
                     {{ testimony.body | linebreaks }}
                 </div>
                 {% endfor %}
@@ -154,22 +158,19 @@
         <div class="col-lg-12 card">
             <div class="card-body testimony-box">
 
-                {% if reviewed %}
-                <div class="alert alert-success" role="alert">
-                    Your testimony is awaiting approval
-                </div>
-                {% else %}
-
                 {% if user.is_authenticated %}
 
                 <h3 class="text-center">Drop your testimony:</h3>
                 <form class="col-12" method="post">
-                    {{ testimony.review_score }} Rating 
+                    <span>{{ average_score }} / 5.0</span>
+                    <span class="stars-outer">
+                        <span class="stars_inner" style="width: {{ average_score_percentage }}"></span>
+                    </span>
+                    {{ testimony.review_score }}
                     {{ testimony_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn-green">Submit</button>
                 </form>
-                {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -178,13 +179,19 @@
 {% else %}
 {% if user.is_authenticated %}
 
-                <h3 class="text-center">Drop your testimony:</h3>
-                <form class="col-12" method="post">
-                    {{ testimony_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn-green">Submit</button>
-                </form>
-                {% endif %}
+<h3 class="text-center">Drop your testimony:</h3>
+<form class="col-12" method="POST" action="{% url 'product_detail' product.id %}">
+    <span>{{ average_score }} / 5.0</span>
+    <span class="stars-outer">
+        <span class="stars_inner" style="width: {{ average_score_percentage }}"></span>
+    </span>
+    {% csrf_token %}
+    {{ testimony.review_score }}
+    {{ testimony_form | crispy }}
+
+    <button type="submit" class="btn-green" aria-label="Product testimony submit button">Submit</button>
+</form>
+{% endif %}
 {% endif %}
 <!-- Testimony Section End -->
 

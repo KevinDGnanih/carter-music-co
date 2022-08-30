@@ -4,8 +4,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, Brand
+from .models import Product, Category, Brand, Testimony
 from .forms import ProductForm, TestimonyForm
+from django.db.models import Avg
 
 # Create your views here.
 
@@ -74,51 +75,92 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
     testimony = product.testimony.filter(approved=True).order_by('created_on')
 
-    context = {
-        'product': product,
-        'testimonies': testimony,
-        'reviewed': False,
-        'testimony_form': TestimonyForm()
-    }
-
-    return render(request, 'products/product_detail.html', context)
-
-
-def post(request, product_id, *args, **kwargs):
-    queryset = Product.objects.filter(status=1)
-    product = get_object_or_404(Product, queryset, pk=product_id)
-    testimony = product.testimony.filter(approved=True).order_by('created_on')
-
-    if request.method == 'post':
+    if request.method == 'POST':
         testimony_form = TestimonyForm(data=request.POST)
 
         if testimony_form.is_valid():
             # Create a testimony but don't save to database yet
             testimony = testimony_form.save(commit=False)
             # Assign the current testimony tot he product
-            testimony.post = post
+            testimony.product_id = product
             # Save the testimony to the database
             testimony.save()
             testimony_form = TestimonyForm()
-            messages.success(request, 'Successfully posted your review.')
+            messages.success(
+                request, 
+                'Successfully posted your testimony and is awaiting approval.')
 
         else:
             testimony_form = TestimonyForm()
 
-        
+    product_testimonies = Testimony.objects.filter(pk=product_id)
+
+    if product_testimonies:
+        average_score = round(product_testimonies.all().aggregate(
+            Avg('review_score')
+        )['review_score__avg'], 2)
+        average_score_percentage = average_score/5*100
+    else:
+        average_score = "-"
+        average_score_percentage = 0
 
     context = {
         'product': product,
-        'testimonies': testimony,
-        'reviewed': True,
-        'testimony_form': TestimonyForm()
+        'product_testimonies': product_testimonies,
+        'testimony_form': TestimonyForm(),
+        'average_score': average_score,
+        'average_score_percentage': average_score_percentage,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+# def post(request, product_id, *args, **kwargs):
+#     queryset = Product.objects.filter(status=1)
+#     product = get_object_or_404(Product, queryset, pk=product_id)
+#     testimony = product.testimony.filter(approved=True).order_by('created_on')
+
+#     if request.method == 'POST':
+#         testimony_form = TestimonyForm(data=request.POST)
+
+#         if testimony_form.is_valid():
+#             # Create a testimony but don't save to database yet
+#             testimony = testimony_form.save(commit=False)
+#             # Assign the current testimony tot he product
+#             testimony.post = post
+#             # Save the testimony to the database
+#             testimony.save()
+#             testimony_form = TestimonyForm()
+#             messages.success(
+#                 request, 
+#                 'Successfully posted your testimony and is awaiting approval.')
+
+#         else:
+#             testimony_form = TestimonyForm()
+
+#     product_testimonies = Testimony.objects.filter(pk=product_id)
+
+#     if product_testimonies:
+#         average_score = round(product_testimonies.all().aggregate(
+#             Avg('review_score')
+#         )['review_score__avg'], 2)
+#         average_score_percentage = average_score/5*100
+#     else:
+#         average_score = "-"
+#         average_score_percentage = 0
+
+#     context = {
+#         'product': product,
+#         'product_testimonies': product_testimonies,
+#         'testimony_form': TestimonyForm(),
+#         'average_score': average_score,
+#         'average_score_percentage': average_score_percentage,
+#     }
+
+#     return render(request, 'products/product_detail.html', context)
 
 
 @login_required

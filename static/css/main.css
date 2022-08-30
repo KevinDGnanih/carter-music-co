@@ -211,6 +211,31 @@ a.category-badge>span.badge:hover {
     transition: box-shadow 150ms ease;
 }
 
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+}
+
+.stars-outer::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-weight: 100;
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 800;
+}
+
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #bada62;
+}
+
 /* ------------------------------- bootstrap toasts */
 .message-container {
     position: fixed;
