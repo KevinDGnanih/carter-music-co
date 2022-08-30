@@ -28,4 +28,4 @@ class TestimonyForm(forms.ModelForm):
 
     class Meta:
         model = Testimony
-        fields = ('review_score', 'body',)
+        fields = ('body',)
