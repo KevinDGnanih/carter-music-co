@@ -25,6 +25,7 @@ class ProductForm(forms.ModelForm):
 
 
 class TestimonyForm(forms.ModelForm):
+
     class Meta:
         model = Testimony
-        fields = ('body',)
+        fields = ('review_score', 'body',)

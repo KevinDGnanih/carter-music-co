@@ -53,11 +53,17 @@ class Product(models.Model):
 
 class Testimony(models.Model):
     """ Testitmony model """
+    SCORE_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
     item = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name='testimony')
-    review_score = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
-    name = models.CharField(max_length=80)
+        Product, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='testimony')
+    review_score = models.IntegerField(choices=SCORE_CHOICES, default=0)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -66,6 +72,10 @@ class Testimony(models.Model):
         """ Adding helpers for a better readability and user experience """
         ordering = ['created_on']
         verbose_name_plural = 'Testimonies'
+
+    @property
+    def rate(self):
+        return self.review_score/5*100
 
     def __str__(self):
         """ Display the testimony """

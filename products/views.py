@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from profiles.models import UserProfile
 from .models import Product, Category, Brand
 from .forms import ProductForm, TestimonyForm
 
@@ -88,19 +87,29 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-def post(request, product_id):
 
-    product = get_object_or_404(Product, pk=product_id)
+def post(request, product_id, *args, **kwargs):
+    queryset = Product.objects.filter(status=1)
+    product = get_object_or_404(Product, queryset, pk=product_id)
     testimony = product.testimony.filter(approved=True).order_by('created_on')
 
-    testimony_form = TestimonyForm(data=request.POST)
+    if request.method == 'post':
+        testimony_form = TestimonyForm(data=request.POST)
 
-    if testimony_form.is_valid():
-        testimony = testimony_form.save(commit=False)
-        testimony.product = product
-        testimony.save()
-    else:
-        testimony_form = TestimonyForm()
+        if testimony_form.is_valid():
+            # Create a testimony but don't save to database yet
+            testimony = testimony_form.save(commit=False)
+            # Assign the current testimony tot he product
+            testimony.post = post
+            # Save the testimony to the database
+            testimony.save()
+            testimony_form = TestimonyForm()
+            messages.success(request, 'Successfully posted your review.')
+
+        else:
+            testimony_form = TestimonyForm()
+
+        
 
     context = {
         'product': product,
