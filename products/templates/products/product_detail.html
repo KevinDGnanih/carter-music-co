@@ -41,7 +41,8 @@
                 </p>
                 {% endif %}
                 {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                <small class="text-muted"><i class="fas fa-star mr-1"></i><span>{{ average_score_percentage }} /
+                        5.0</span></small>
                 {% else %}
                 <small class="text-muted">No Rating</small>
                 {% endif %}
@@ -125,81 +126,60 @@
     </div>
 </div>
 <!-- Testimony Section Start -->
-{% if testimonies %}
-<div class="pb-80">
-    <div class="p-0">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="small-title mb-30 text-center">
-                    <h2>TESTIMONY</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-sm-6 flex ml-3">
-
-                {% for testimony in testimonies %}
-                <div class="testimonies">
-                    <span class="stars-outer">
-                        <span class="stars-inner" style="width: {{ testimony.review_score }}">
-                            {{ testimony.review_score }}%
-                        </span>
-                    </span>
-                    <div>
-                        <span class="text-muted time-testimony">
-                            {{ testimony.created_on }}
-                        </span>
+<div class="container">
+    <div class="pb-80">
+        <div class="p-0">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="small-title mb-30 text-center">
+                        <h2>TESTIMONY</h2>
                     </div>
-                    {{ testimony.body | linebreaks }}
                 </div>
-                {% endfor %}
             </div>
-        </div>
-        <div class="col-lg-12 card">
-            <div class="card-body testimony-box">
+            <div class="row">
+                <div class="col-lg-12 col-sm-6 flex">
+                    {% for testimony in testimonies %}
+                    <div class="testimonies">
+                        <span class="stars-outer">
+                            <span class="stars-inner" style="width: {{ testimony.review_score }};"></span>
+                        </span>
+                        <div>
+                            <span class="text-muted time-testimony">
+                                {{ testimony.created_on }}
+                            </span>
+                        </div>
+                        <div>
+                            {{ testimony.body | linebreaks }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
 
-                {% if user.is_authenticated %}
+            <div class="row">
+                <div class=" col-12 card-body testimony-box mx-auto">
 
-                <h3 class="text-center">Drop your testimony:</h3>
-                <form class="col-12" method="post">
-                    <span>{{ average_score }} / 5.0</span>
-                    <span class="stars-outer">
-                        <span class="stars_inner" style="width: {{ average_score_percentage }}"></span>
-                    </span>
-                    {{ testimony.review_score }}
-                    {{ testimony_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn-green">Submit</button>
-                </form>
-                {% endif %}
+                    {% if user.is_authenticated %}
+
+                    <h3 class="text-center">Drop your testimony:</h3>
+                    <form class="form col-12" method="POST">
+                        {{ testimony.review_score }}
+                        {{ testimony_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-green">Submit</button>
+                    </form>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% else %}
-{% if user.is_authenticated %}
+    <!-- Testimony Section End -->
 
-<h3 class="text-center">Drop your testimony:</h3>
-<form class="col-12" method="POST" action="{% url 'product_detail' product.id %}">
-    <span>{{ average_score }} / 5.0</span>
-    <span class="stars-outer">
-        <span class="stars_inner" style="width: {{ average_score_percentage }}"></span>
-    </span>
-    {% csrf_token %}
-    {{ testimony.review_score }}
-    {{ testimony_form | crispy }}
+    {% include 'includes/footer/footer.html' %}
 
-    <button type="submit" class="btn-green" aria-label="Product testimony submit button">Submit</button>
-</form>
-{% endif %}
-{% endif %}
-<!-- Testimony Section End -->
+    {% endblock %}
 
-{% include 'includes/footer/footer.html' %}
-
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
-{% endblock %}
+    {% block postloadjs %}
+    {{ block.super }}
+    {% include 'products/includes/quantity_input_script.html' %}
+    {% endblock %}

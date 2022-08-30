@@ -236,6 +236,25 @@ a.category-badge>span.badge:hover {
     color: #bada62;
 }
 
+.control-label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.testimonies {
+    background: #f8f8f8;
+}
 /* ------------------------------- bootstrap toasts */
 .message-container {
     position: fixed;
