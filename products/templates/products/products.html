@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/carousel.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/carousel.scss' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -158,5 +163,6 @@
 
 {{ block.super }}
 <script type="text/javascript" src="{% static 'products/js/products.js' %}"></script>
+<script type="text/javascript" src="{% static 'products/js/carousel.js' %}"></script>
 {% endblock %}
 
