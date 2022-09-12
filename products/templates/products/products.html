@@ -86,12 +86,15 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
-                            <p class="mb-0">{{ product.name }}</p>
+                            <a href="{% url 'product_detail' product.id %}" class="text-black cursor">
+                                <p class="mb-0">{{ product.name }}</p>
+                            </a>
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold text-success">£{{ product.price }}</p>
+                                    <p class="lead mb-0 text-left font-weight-bold text-success">
+                                        £{{ product.price }}</p>
                                     {% if product.category %}
                                     <p class="small mt-1 mb-0">
                                         <a class="text-muted"
