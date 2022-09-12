@@ -46,7 +46,6 @@ body {
     text-decoration: underline;
     text-decoration-color: #007bff;
     font-weight: bolder;
-
 }
 
 .icon-nav {
@@ -203,7 +202,7 @@ a.category-badge>span.badge:hover {
 
 .btn-link,
 .update-link,
-.remove-item {
+.remove-product {
     cursor: pointer;
 }
 
