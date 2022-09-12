@@ -168,6 +168,14 @@ body {
     transform: scale(1.01);
 }
 
+.shad {
+    transition: all 0.3s ease-out 0s;
+}
+
+.shad:hover {
+    box-shadow: 5px 5px 15px rgb(235, 235, 235);
+}
+
 a.category-badge>span.badge:hover {
     background: #212529 !important;
     color: white !important;
