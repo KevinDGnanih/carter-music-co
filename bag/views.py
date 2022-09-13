@@ -54,7 +54,8 @@ def adjust_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    """ Add a quantity of the specified product to the specified amount """
+    """ emove the item from the shopping bag """
+
     try:
         product = get_object_or_404(Product, pk=item_id)
         bag = request.session.get('bag', {})
