@@ -127,5 +127,21 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'bag/js/bag.js' %}"></script>
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-product').click(function (e) {
+        let csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
