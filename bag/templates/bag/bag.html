@@ -79,7 +79,7 @@
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            {% include "bag/product-image.html" %}
+                            <a href="{% url 'product_detail' item.product.id %}">{% include "bag/product-image.html" %}</a>
                         </td>
                         <td class="py-3">
                             {% include "bag/product-info.html" %}
