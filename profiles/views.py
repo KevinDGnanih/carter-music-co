@@ -3,9 +3,22 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+from products.models import Product
 from checkout.models import Order
 from .models import UserProfile
 from .forms import UserProfileForm
+
+
+@login_required
+def dashboard(request):
+    profile = get_object_or_404(UserProfile, user=request.user)
+    
+    template = 'profiles/dashboard.html'
+    context = {
+        "on_profile_page": True
+    }
+
+    return render(request, template, context)
 
 
 @login_required
@@ -52,3 +65,8 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+@login_required
+def add_to_whishlist(request, item_id):
+    """ Wishlist """
+    product = get_object_or_404(Product, pk=item_id)
