@@ -1,5 +1,5 @@
 """ Profiles views """
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -12,7 +12,7 @@ from .forms import UserProfileForm
 @login_required
 def dashboard(request):
     profile = get_object_or_404(UserProfile, user=request.user)
-    
+
     template = 'profiles/dashboard.html'
     context = {
         "on_profile_page": True
@@ -66,7 +66,27 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+
+@login_required
+def wishlist(request):
+    products = Product.objects.filter(user_wishlist=request.user)
+
+    context = {
+        'products': products,
+    }
+    return render(request, "profiles/wishlist.html", context)
+
 @login_required
 def add_to_whishlist(request, item_id):
     """ Wishlist """
     product = get_object_or_404(Product, pk=item_id)
+    redirect_url = request.POST.get('redirect_url')
+
+    if product.user_wishlist.filter(id=request.user.id).exists():
+        product.user_wishlist.remove(request.user)
+        messages.success(request, f'{product.name} has been removed from your Whislist')
+    else:
+        product.user_wishlist.add(request.user)
+        messages.success(request, f'{product.name} has been added to your Whislist')
+
+    return redirect(redirect_url)

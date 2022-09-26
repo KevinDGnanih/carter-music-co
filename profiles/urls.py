@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     path('', views.profile, name='profile'),
     path("dashboard/", views.dashboard, name="dashboard"),
+    path("wishlist/", views.wishlist, name="wishlist"),
     path('order_history/<order_number>',
          views.order_history, name='order_history'),
-    path("wishlist/add_to_wishlist", views.add_to_whishlist, name="user_wishlist"),
+    path("wishlist/add_to_wishlist<item_id>", views.add_to_whishlist, name="add_to_wishlist"),
 ]

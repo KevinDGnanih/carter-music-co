@@ -9,6 +9,13 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+footer {
+    position: inherit;
+    bottom: 0;
+    width: 100%;
+
+}
+
 .background-texts {
     background-color: rgb(29, 29, 29, 0.5)
 }
@@ -57,6 +64,14 @@ body {
     background-color: white;
 }
 
+.fa-tasks, .fa-truck {
+    font-size: xx-large;
+    padding: 50%;
+}
+
+.dash-card {
+    box-shadow: 5px 5px 15px rgb(235, 235, 235);
+}
 /* from Bulma */
 .icon {
     align-items: center;
