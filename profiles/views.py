@@ -11,14 +11,10 @@ from .forms import UserProfileForm
 
 @login_required
 def dashboard(request):
-    profile = get_object_or_404(UserProfile, user=request.user)
-
+    """ View the profile dashboard """
     template = 'profiles/dashboard.html'
-    context = {
-        "on_profile_page": True
-    }
 
-    return render(request, template, context)
+    return render(request, template)
 
 
 @login_required
@@ -68,25 +64,28 @@ def order_history(request, order_number):
 
 
 @login_required
-def wishlist(request):
-    products = Product.objects.filter(user_wishlist=request.user)
+def view_wishlist(request):
+    """ A view that renders the user wishlist contente page """
+    # product = get_object_or_404(Product, pk=item_id)
+    # context = {
+    #     'wishlist': product,
+    # }
 
-    context = {
-        'products': products,
-    }
-    return render(request, "profiles/wishlist.html", context)
+    return render(request, "profiles/wishlist.html")
+
 
 @login_required
 def add_to_whishlist(request, item_id):
-    """ Wishlist """
+    """ Add the product to the user wishlist """
     product = get_object_or_404(Product, pk=item_id)
     redirect_url = request.POST.get('redirect_url')
+    wishlist = request.get('profile', {})
 
-    if product.user_wishlist.filter(id=request.user.id).exists():
-        product.user_wishlist.remove(request.user)
+    if product.users_wishlist.filter(id=request.user.id).exists():
+        product.users_wishlist.remove(request.user)
         messages.success(request, f'{product.name} has been removed from your Whislist')
     else:
-        product.user_wishlist.add(request.user)
+        product.users_wishlist.add(request.user)
         messages.success(request, f'{product.name} has been added to your Whislist')
 
     return redirect(redirect_url)
