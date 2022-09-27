@@ -66,12 +66,15 @@ def order_history(request, order_number):
 @login_required
 def view_wishlist(request):
     """ A view that renders the user wishlist contente page """
-    # product = get_object_or_404(Product, pk=item_id)
-    # context = {
-    #     'wishlist': product,
-    # }
+    product = Product.objects.all()
 
-    return render(request, "profiles/wishlist.html")
+    product.filter(users_wishlist=request.user)
+
+    context = {
+        'wishlist': product,
+    }
+
+    return render(request, "profiles/wishlist.html", context)
 
 
 @login_required
