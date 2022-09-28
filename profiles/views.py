@@ -1,5 +1,6 @@
 """ Profiles views """
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -21,6 +22,9 @@ def dashboard(request):
 def profile(request):
     """ Display the user's profile """
     profile = get_object_or_404(UserProfile, user=request.user)
+    added = False
+    if product.users_wishlist.filter(request.user.id).exists():
+        added = True
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -68,8 +72,6 @@ def view_wishlist(request):
     """ A view that renders the user wishlist contente page """
     product = Product.objects.all()
 
-    product.filter(users_wishlist=request.user)
-
     context = {
         'wishlist': product,
     }
@@ -81,8 +83,6 @@ def view_wishlist(request):
 def add_to_whishlist(request, item_id):
     """ Add the product to the user wishlist """
     product = get_object_or_404(Product, pk=item_id)
-    redirect_url = request.POST.get('redirect_url')
-    wishlist = request.get('profile', {})
 
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
@@ -91,4 +91,4 @@ def add_to_whishlist(request, item_id):
         product.users_wishlist.add(request.user)
         messages.success(request, f'{product.name} has been added to your Whislist')
 
-    return redirect(redirect_url)
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])

@@ -8,5 +8,5 @@ urlpatterns = [
     path("wishlist/", views.view_wishlist, name="wishlist"),
     path('order_history/<order_number>',
          views.order_history, name='order_history'),
-    path("add_wishlist/<item_id>", views.add_to_whishlist, name="add_to_wishlist"),
+    path("wishlist/add_to_wishlist/<int:item_id>", views.add_to_whishlist, name="add_to_wishlist"),
 ]
