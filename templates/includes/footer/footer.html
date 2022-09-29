@@ -20,11 +20,25 @@
             <div class="col-2">
                 <h5>Section</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-muted bottom-link">Home</a>
+                    <li class="nav-item mb-2"><a href="{% url 'products' %}"
+                            class="nav-link p-0 text-muted bottom-link">Home</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-muted bottom-link">About</a></li>
+                    <li class="nav-item mb-2"><a href="{% url 'about' %}"
+                            class="nav-link p-0 text-muted bottom-link">About</a></li>
                 </ul>
             </div>
+
+            <hr>
+            <div class="col-2">
+                <a href="https://www.fender.com/en-GB/start" target="_blank"><img width="35%"
+                        src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1664489777/fender_logo_ekqeig.png"
+                        alt="Fender logo"></a>
+                <a href="https://uk.yamaha.com/en/products/musical_instruments/guitars_basses/index.html"
+                    target="_blank"><img width="35%"
+                        src="https://res.cloudinary.com/kdcloud-8710/image/upload/v1664489777/yamaha_logo_c5jiag.png"
+                        alt="Yamaha logo"></a>
+            </div>
+            <hr>
 
             <div class="col-4 offset-1">
                 <!--<form>
@@ -39,8 +53,6 @@
                 <!-- Begin Mailchimp Signup Form -->
                 <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
                 <style type="text/css">
-                    
-
                     /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                 </style>
@@ -56,8 +68,8 @@
                             <div class="mc-field-group">
                                 <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
                                 </label>
-                                <input type="email" value="" name="EMAIL" class="required email style-input" id="mce-EMAIL"
-                                    required>
+                                <input type="email" value="" name="EMAIL" class="required email style-input"
+                                    id="mce-EMAIL" required>
                                 <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                             </div>
                             <div id="mce-responses" class="clear foot">
@@ -80,7 +92,8 @@
                         </div>
                     </form>
                 </div>
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+                </script>
                 {{ block.super }}
                 <script type="text/javascript" src="/static/js/mailchimp.js"></script>
                 <!--End mc_embed_signup-->
@@ -91,7 +104,10 @@
         <div class="d-flex justify-content-between border-top">
             <p>© 2022 Carter Music & Co. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
-                <li class="ms-3">Find us on:<a target="_blank" class="link-dark" href="https://www.facebook.com/Carter-Music-Co-111277511708560"><h3><i class="fa fa-facebook"></i></h3></a></li>
+                <li class="ms-3">Find us on:<a target="_blank" class="link-dark"
+                        href="https://www.facebook.com/Carter-Music-Co-111277511708560" rel="noopener">
+                        <h3><i class="fa fa-facebook"></i></h3>
+                    </a></li>
             </ul>
         </div>
     </footer>
