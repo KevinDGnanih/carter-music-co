@@ -55,7 +55,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a class="navbar-brand main-logo-link" href="{% url 'home' %}">Carter Music & co.</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbar-Color01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -195,7 +195,7 @@
 
     {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript" src="{% static 'js/toasts.js' %}"></script>
+    <script src="{% static 'js/toasts.js' %}"></script>
     {% endblock %}
 </body>
 
