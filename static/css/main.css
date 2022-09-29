@@ -16,6 +16,14 @@ footer {
 
 }
 
+.fa-heart {
+    color: pink;
+}
+
+.btn-like {
+    cursor: pointer;
+}
+
 .background-texts {
     background-color: rgb(29, 29, 29, 0.5)
 }

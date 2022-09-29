@@ -1,5 +1,6 @@
 """ Product Views """
 from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q

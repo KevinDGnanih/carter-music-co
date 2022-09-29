@@ -106,8 +106,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="whislist">
-                            <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-blue text-uppercase" role="button" aria-disabled="true">Add to wishlist</a>
+                        <div class="col-1 whislist">
+                            <strong>
+                                {% if user.is_authenticated %}
+                                <form class="d-inline" action="{% url 'add_to_wishlist' product.id %}" method="POST" id="likedata" data-url="{% url 'add_to_wishlist' product.id %}">
+                                    {% csrf_token %}
+                                    {% if liked_wishlist %}
+
+                                    <button type="submit" name="product_wishlist_id"  class="btn-like" id="btnLike">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+
+                                    {% else %}
+
+                                    <button type="submit" name="product_wishlist_id"  class="btn-like" id="btnLike">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+
+                                    {% endif %}
+
+                                </form>
+                                {% endif %}
+                            </strong>
                         </div>
 
                         <div class="col{% if c %}-12 mt-2{% endif %}">
