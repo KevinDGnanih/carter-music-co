@@ -22,9 +22,6 @@ def dashboard(request):
 def profile(request):
     """ Display the user's profile """
     profile = get_object_or_404(UserProfile, user=request.user)
-    added = False
-    if product.users_wishlist.filter(request.user.id).exists():
-        added = True
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -37,13 +34,24 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    orders = profile.orders.all()
-
     template = 'profiles/profile.html'
     context = {
         'form': form,
-        'orders': orders,
         'on_profile_page': True
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def user_order_history(request):
+    """ Display the user's order history """
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
+
+    template = 'profiles/orders_history.html'
+    context = {
+        'orders': orders,
     }
 
     return render(request, template, context)
