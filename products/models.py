@@ -1,5 +1,5 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -47,7 +47,7 @@ class Product(models.Model):
         max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    users_wishlist = models.ManyToManyField(settings.AUTH_WISHLIST_MODEL, related_name="users_wishlist", blank=True)
+    users_wishlist = models.ManyToManyField(User, related_name='wishlist', blank=True)
 
     def __str__(self):
         return self.name
