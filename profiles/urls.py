@@ -8,5 +8,4 @@ urlpatterns = [
     path("dashboard/", views.dashboard, name="dashboard"),
     path('order_history/<order_number>',
          views.order_history, name='order_history'),
-    # path("wishlist/add_to_wishlist/<int:item_id>", views.add_to_whishlist, name="add_to_wishlist"),
 ]
