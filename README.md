@@ -132,9 +132,9 @@ Wireframes were created using my book and pencil.
 
 The wireframes have examples of desktop, tablet, and mobile phone displays.
 
-* [Main](static/img/main.jpg) <div align="center"><img src = "static/img/main.jpg" width=900></div>
-* [Mobile](static/img/mobile.jpg) <div align="center"><img src = "static/img/mobile.jpg" width=900></div>
-* [detail](static/img/detail.jpg) <div align="center"><img src = "static/img/detail.jpg" width=900></div>
+* [Main](static/img/main.jpg) <div align="center"><img src = "static/img/main.jpg" width=500></div>
+* [Mobile](static/img/mobile.jpg) <div align="center"><img src = "static/img/mobile.jpg" width=500></div>
+* [Detail](static/img/detail.jpg) <div align="center"><img src = "static/img/detail.jpg" width=500></div>
 
 Overall, the finished projects design is similar to what I had originally intended to create as per my wireframes.
 
@@ -148,7 +148,7 @@ Overall, the finished projects design is similar to what I had originally intend
 ### Brand Logo
 Logo design is the cornerstone in your brand identity and presents a company's name, product and brand. I used [Affinity Photo](https://affinity.serif.com/en-gb/photo/?trial&mc=AFFPPC01&gclid=CjwKCAjwx7GYBhB7EiwA0d8oe-kgVX1F7VU0CM0nqeyFV_FV5Ubl5KroxO8iUyloQOa2VovEBqekGBoCNYgQAvD_BwE) to create the brand logo file. The font represents the brand value `Arial`.
 
-<img src"https://res.cloudinary.com/kdcloud-8710/image/upload/v1663964061/cmco_n2tl4f.png">
+<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1663964061/cmco_n2tl4f.png" width=200></div>
 
 <div "text-align: right;"><a href="#table-of-contents">Back to top</a></div>
 
@@ -310,6 +310,11 @@ Devices and platforms used for testing:
 - [x] Iphone 6/7/8 Plus, IphoneX;
 - [x] Ipad and Ipad Pro;
 
+<div align="center"><img src="static/img/html-val.jpg" width=500></div>
+<div align="center"><img src="static/img/css-val.jpg" width=500></div>
+<div align="center"><img src="static/img/light01.jpg" width=500></div>
+
+
 
 ### Validation
 *HTML: I have used https://validator.w3.org/ in order to validate the HTML code.
@@ -322,6 +327,8 @@ Devices and platforms used for testing:
 
 Errors not handled:
 - Element style not allowed as child of element div in this context. (Suppressing further errors from this subtree.)
+
+
 
 ## Languages
 - HTML, CSS, JavaScript, Python
