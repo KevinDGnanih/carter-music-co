@@ -118,8 +118,28 @@ The shop allows customer to leave a comment to any instrument.
 <div><a href="#table-of-contents">Back to top</a></div>
 
 ## Design
-### Wireframes
-Wireframes were created by hands.
+
+I have used white for the overall background colour fo the website, accompanied by black for the header to noteably distinguish this from the main content.
+
+For the text, black has been used against the white background. this opposite contrast has been chosen for ease of visibility, so users are able to read the text without any additional difficulty.
+
+### Typography <a name="typography"></a>
+
+The fonts were obtained from [Google Fonts](https://fonts.google.com/).
+
+### Wireframes <a name="wireframes"></a>
+
+Wireframes were created using my book and pencil.
+
+The wireframes have examples of desktop, tablet, and mobile phone displays.
+
+* [Main](img/main.jpg)
+* [Mobile](img/mobile.jpg)
+* [detail](img/detail.jpg)
+
+Overall, the finished projects design is similar to what I had originally intended to create as per my wireframes.
+
+
 
 ### Brand Identity
 - Vision: Simple design to shocase the intruments with ease.
@@ -290,6 +310,7 @@ Devices and platforms used for testing:
 - [x] Iphone 6/7/8 Plus, IphoneX;
 - [x] Ipad and Ipad Pro;
 
+
 ### Validation
 *HTML: I have used https://validator.w3.org/ in order to validate the HTML code.
 
@@ -298,6 +319,9 @@ Devices and platforms used for testing:
 *JavaScript: I have used https://jshint.com/ in order to check the JavaScript code.
 
 *PEP8 Online: (http://pep8online.com/) was used to validate Python.
+
+Errors not handled:
+- Element style not allowed as child of element div in this context. (Suppressing further errors from this subtree.)
 
 ## Languages
 - HTML, CSS, JavaScript, Python
@@ -325,10 +349,17 @@ Devices and platforms used for testing:
 - [SQlite3](https://www.sqlite.org/index.html)- database used for development.
 - [PostgreSQL](https://www.postgresql.org/) - database used for production.
 
+Data relationship:
+
+
+* [Data Relationship](img/data.jpg)
+
+
+
 <div><a href="#table-of-contents">Back to top</a></div>
 
 # Deployment
-## Heroku Deployment with AWS
+## Heroku Deployment
 This website is deployed on [Heroku](https://www.heroku.com/), following these steps:
 1. Install these packages to your local environment, since these packages are required to deploy a Django project on Heroku.
 - [gnicorn](https://gunicorn.org/): `gnicorn` is Python WSGI(web server gataway interface) server for UNIX.

@@ -2,7 +2,7 @@
 $('.update-link').click(function(e) {
     var form = $(this).prev('.update-form');
     form.submit();
-})
+});
 
 // Remove item and reload on click
 $('.remove-product').click(function(e) {
@@ -17,4 +17,4 @@ $('.remove-product').click(function(e) {
         .done(function() {
             location.reload();
         });
-})
+});
