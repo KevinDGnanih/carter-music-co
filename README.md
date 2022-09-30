@@ -7,7 +7,6 @@ So that the customers can enjoy their favourite instruments without breaking the
 The shop allows customer to leave a comment to any instrument.
 
 <div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857820/main_g6b3q8.jpg" width=900></div>
-<div align="center"><img src = "https://res.cloudinary.com/kdcloud-8710/image/upload/v1661857820/main_g6b3q8.jpg" width=900></div>
 
 ## Table of Contents
 
@@ -133,9 +132,9 @@ Wireframes were created using my book and pencil.
 
 The wireframes have examples of desktop, tablet, and mobile phone displays.
 
-* [Main](img/main.jpg)
-* [Mobile](img/mobile.jpg)
-* [detail](img/detail.jpg)
+* [Main](static/img/main.jpg)
+* [Mobile](static/img/mobile.jpg)
+* [detail](static/img/detail.jpg)
 
 Overall, the finished projects design is similar to what I had originally intended to create as per my wireframes.
 
@@ -148,7 +147,8 @@ Overall, the finished projects design is similar to what I had originally intend
 
 ### Brand Logo
 Logo design is the cornerstone in your brand identity and presents a company's name, product and brand. I used [Affinity Photo](https://affinity.serif.com/en-gb/photo/?trial&mc=AFFPPC01&gclid=CjwKCAjwx7GYBhB7EiwA0d8oe-kgVX1F7VU0CM0nqeyFV_FV5Ubl5KroxO8iUyloQOa2VovEBqekGBoCNYgQAvD_BwE) to create the brand logo file. The font represents the brand value `Arial`.
-<p align="center"><img src = "https://scontent.ffab1-1.fna.fbcdn.net/v/t39.30808-6/302497985_111281378374840_6306577639495841571_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=IGuruednIcEAX-id3Xz&_nc_ht=scontent.ffab1-1.fna&oh=00_AT-ybnzpP3tSLLDVg4XUlsmwL-98ORYxbs5kWAa0qDjKaA&oe=6312CE69"></p>
+
+<img src"https://res.cloudinary.com/kdcloud-8710/image/upload/v1663964061/cmco_n2tl4f.png">
 
 <div "text-align: right;"><a href="#table-of-contents">Back to top</a></div>
 
