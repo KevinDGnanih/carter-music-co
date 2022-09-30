@@ -126,7 +126,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript" src="{% static 'bag/js/bag.js' %}"></script>
+<script src="{% static 'bag/js/bag.js' %}"></script>
 <script type="text/javascript">
     // Remove item and reload on click
     $('.remove-product').click(function (e) {
