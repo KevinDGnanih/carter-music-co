@@ -132,9 +132,9 @@ Wireframes were created using my book and pencil.
 
 The wireframes have examples of desktop, tablet, and mobile phone displays.
 
-* [Main](static/img/main.jpg)
-* [Mobile](static/img/mobile.jpg)
-* [detail](static/img/detail.jpg)
+* [Main](static/img/main.jpg) <div align="center"><img src = "static/img/main.jpg" width=900></div>
+* [Mobile](static/img/mobile.jpg) <div align="center"><img src = "static/img/mobile.jpg" width=900></div>
+* [detail](static/img/detail.jpg) <div align="center"><img src = "static/img/detail.jpg" width=900></div>
 
 Overall, the finished projects design is similar to what I had originally intended to create as per my wireframes.
 
