@@ -24,6 +24,6 @@ class TestProductForms(TestCase):
             'color': 'Cherry',
             'brand': 'Taylor',
             'rating': '3',
-            'image_url': 'https://res.cloudinary.com/kdcloud-8710/image/upload/v1660678326/amp_logo_xjzqoe.jpg',
+            'image_url': 'https://res.cloudinary.com/kdcloud-8710/image/upload/v1663964061/cmco_n2tl4f.png',
             'image': 'image.jpg'})
         self.assertFalse(form.is_valid())

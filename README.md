@@ -276,6 +276,29 @@ A instrument could have several types of colors. And have target `category` and 
 # Technologies Used
 The main frontend development was created using HTML, CSS, JavaScript and their libraries. The main backend development was powered by Python and Django.
 
+## Testing
+### Manual Testing
+Devices and platforms used for testing:
+* Google Chrome.
+* Mozilla Firefox.
+* Opera.
+
+- [x] laptop, laptop with touch (width 1440px);
+- [x] Galaxy S5;
+- [x] Pixel2, Pixel 2XL;
+- [x] Iphone 5/SE, Iphone 6/7/8;
+- [x] Iphone 6/7/8 Plus, IphoneX;
+- [x] Ipad and Ipad Pro;
+
+### Validation
+*HTML: I have used https://validator.w3.org/ in order to validate the HTML code.
+
+*CSS: I have used https://jigsaw.w3.org/css-validator/ in order to validate the CSS code & CSS prefixes were checked against with https://autoprefixer.github.io/
+
+*JavaScript: I have used https://jshint.com/ in order to check the JavaScript code.
+
+*PEP8 Online: (http://pep8online.com/) was used to validate Python.
+
 ## Languages
 - HTML, CSS, JavaScript, Python
 
