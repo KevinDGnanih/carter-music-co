@@ -19,7 +19,6 @@ from django.views.generic.base import RedirectView
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import handler404
 
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(
@@ -33,4 +32,3 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('about/', include('about.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'carter_music_co.views.handler404'
