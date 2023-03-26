@@ -33,9 +33,10 @@ ALLOWED_HOSTS = [
     'carter-music-co.onrender.com/',
     'carter-music-co-origin.vercel.app',
     '127.0.0.1',
+    '.vercel.app',
     'localhost']
 
-WSGI_APPLICATION = 'carter-music-co-origin.wsgi.app'
+WSGI_APPLICATION = 'carter-music-co.wsgi.app'
 
 # Add Render.com URL to allowed hosts
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
