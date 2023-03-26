@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'carter-music-co.onrender.com/',
+    'carter-music-co.onrender.com',
     'carter-music-co-origin.vercel.app',
     'carter-music-co.vercel.app',
     '127.0.0.1',
