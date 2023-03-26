@@ -32,7 +32,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     'carter-music-co-origin.vercel.app',
     '127.0.0.1',
-    '.vercel.app',
+    '*.vercel.app',
     'localhost']
 
 WSGI_APPLICATION = 'carter_music_co.wsgi.app'
