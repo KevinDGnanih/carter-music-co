@@ -30,10 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'https://carter-music-co.onrender.com'
-    'carter-music-co-origin.vercel.app',
-    '127.0.0.1',
-    '*.vercel.app',
+    'carter-music-co.onrender.com'
     'localhost']
 
 WSGI_APPLICATION = 'carter_music_co.wsgi.app'
@@ -131,9 +128,9 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
-'''
+
 WSGI_APPLICATION = 'carter_music_co.wsgi.application'
-'''
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
