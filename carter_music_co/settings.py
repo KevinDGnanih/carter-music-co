@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'carter-music-co.onrender.com'
+    'carter-music.onrender.com'
     'localhost']
 
 WSGI_APPLICATION = 'carter_music_co.wsgi.app'
