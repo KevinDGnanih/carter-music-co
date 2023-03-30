@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /accounts/
 Disallow: /bag/
-Sitemap: https://carter-music-co.herokuapp.com//sitemap.xml
